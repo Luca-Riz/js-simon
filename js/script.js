@@ -20,7 +20,7 @@ console.log(randomNumber);
 
 // mostro il contenuto dell'array con un alert
 var conf = alert('memorizza questi numeri '+ randomNumber);
-var partenza = 3; //!da mettere 30
+var partenza = 30; //!da mettere 30
     var countdownTimer = setInterval(countdown, 1000);  
 
 
