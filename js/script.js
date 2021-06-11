@@ -26,25 +26,42 @@ if(conf == true){
     var countdownTimer = setInterval(countdown, 1000);    
 }
 
-// finito il tempo chiedo 5 prompt per riempire variabile "inseriti"
 
-// confronto i due array e dico quanti sono stati indovinati e quali
-
-
-
+if(countdown == true) /*quando il countdown finisce */{
+    valoriIns();
+}
 
 
 
-//* funzioni
 function countdown(){
     if(partenza == 0){
-        document.getElementById('countdown').innerHTML = 'Tempo scaduto, inserisci i 5 numeri che avevi visto';
-        clearInterval(partenza);
+        clearInterval(partenza); //fine setInterval
+        return true;        
     } else {
         document.getElementById('countdown').innerHTML = partenza;
         partenza--;
     }
 }
 
+function valoriIns(){
+    
+    var inseriti = [];
+    // finito il tempo chiedo 5 prompt per riempire variabile "inseriti"
+    
+    while(inseriti.length<5){
+        var valore = parseInt(prompt('Inserisci un numero di quelli che hai vistprima'));
+        if(inseriti.includes(valore) != true){
+            inseriti.push(valore);
+        } else {
+            alert ('numero già inserito');
+        }
+    }
+    console.log(inseriti);
+}
 
+
+
+
+
+// confronto i due array e dico quanti sono stati indovinati e quali
 
