@@ -19,6 +19,8 @@ console.log(randomNumber);
 
 // mostro il contenuto dell'array con un alert
 
+alert('memorizza questi numeri '+ randomNumber);
+
 // quando schiaccio button parte un timer di 30 secondi
 
 // finito il tempo chiedo 5 prompt per riempire variabile "inseriti"
