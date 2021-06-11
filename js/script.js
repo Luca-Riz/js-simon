@@ -9,6 +9,7 @@
 // faccio un array con 5 numeri random
 var randomNumber = [];
 
+
 while(randomNumber.length<5){
     var valore = Math.floor(Math.random()*100 +1);
     if(randomNumber.includes(valore) == false){
@@ -23,18 +24,36 @@ var partenza = 3; //!da mettere 30
     var countdownTimer = setInterval(countdown, 1000);  
 
 
+function valoriIns(){
+    
+    // finito il tempo chiedo 5 prompt per riempire variabile "inseriti"    
+    var inseriti = [];
+    while(inseriti.length<5){
+        var valore = parseInt(prompt('Inserisci un numero di quelli che hai visto prima'));
+        if(inseriti.includes(valore) != true){
+            inseriti.push(valore);
 
-// confronto i due array e dico quanti sono stati indovinati e quali
+            // confronto i due array e dico quanti sono stati indovinati e quali
 
-var corretti = [];
+            var corretti = [];
+ 
+            for(var i=0; i<5; i++){
+            
+                if(randomNumber.includes(inseriti[i]) == true){
+                    corretti.push(inseriti[i]);
+                }
+            }
+            // console.log(corretti);
 
-for(var i=0; i<5; i++){
-    if(randomNumber.includes(inseriti[i]) == true){
-        corretti.push(inseriti[i]);
+
+        } else {
+            alert ('numero già inserito');
+        }
     }
+    // console.log(inseriti);
+    console.log('Hai indovinato '+ corretti.length + ' numeri');
+    console.log('I numeri corretti sono: '+ corretti);
 }
-console.log(corretti);
-
 
 
 
@@ -49,21 +68,4 @@ function countdown(){
         partenza--;
     }
 }
-
-function valoriIns(){
-    
-    // finito il tempo chiedo 5 prompt per riempire variabile "inseriti"
-    inseriti = []; //dichiarata globale di proposito
-    
-    while(inseriti.length<5){
-        var valore = parseInt(prompt('Inserisci un numero di quelli che hai visto prima'));
-        if(inseriti.includes(valore) != true){
-            inseriti.push(valore);
-        } else {
-            alert ('numero già inserito');
-        }
-    }
-    console.log(inseriti);
-}
-
 
