@@ -18,11 +18,33 @@ while(randomNumber.length<5){
 console.log(randomNumber);
 
 // mostro il contenuto dell'array con un alert
-
-alert('memorizza questi numeri '+ randomNumber);
+var conf = confirm('memorizza questi numeri '+ randomNumber);
 
 // quando schiaccio button parte un timer di 30 secondi
+if(conf == true){
+    var partenza = 3; //!da mettere 30
+    var countdownTimer = setInterval(countdown, 1000);    
+}
 
 // finito il tempo chiedo 5 prompt per riempire variabile "inseriti"
 
 // confronto i due array e dico quanti sono stati indovinati e quali
+
+
+
+
+
+
+//* funzioni
+function countdown(){
+    if(partenza == 0){
+        document.getElementById('countdown').innerHTML = 'Tempo scaduto, inserisci i 5 numeri che avevi visto';
+        clearInterval(partenza);
+    } else {
+        document.getElementById('countdown').innerHTML = partenza;
+        partenza--;
+    }
+}
+
+
+
