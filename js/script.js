@@ -22,10 +22,24 @@ var conf = alert('memorizza questi numeri '+ randomNumber);
 var partenza = 3; //!da mettere 30
     var countdownTimer = setInterval(countdown, 1000);  
 
-// if(countdown() == true) /*quando il countdown finisce */{
-//     valoriIns();
-// }
 
+
+// confronto i due array e dico quanti sono stati indovinati e quali
+
+var corretti = [];
+
+for(var i=0; i<5; i++){
+    if(randomNumber.includes(inseriti[i]) == true){
+        corretti.push(inseriti[i]);
+    }
+}
+console.log(corretti);
+
+
+
+
+
+//*funzioni
 function countdown(){
     if(partenza === 0){
         clearInterval(countdownTimer); //fine setInterval
@@ -38,8 +52,8 @@ function countdown(){
 
 function valoriIns(){
     
-    var inseriti = [];
     // finito il tempo chiedo 5 prompt per riempire variabile "inseriti"
+    inseriti = []; //dichiarata globale di proposito
     
     while(inseriti.length<5){
         var valore = parseInt(prompt('Inserisci un numero di quelli che hai visto prima'));
@@ -52,9 +66,4 @@ function valoriIns(){
     console.log(inseriti);
 }
 
-
-
-
-
-// confronto i due array e dico quanti sono stati indovinati e quali
 
