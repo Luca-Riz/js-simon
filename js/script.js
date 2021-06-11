@@ -27,16 +27,17 @@ if(conf == true){
 }
 
 
-if(countdown == true) /*quando il countdown finisce */{
-    valoriIns();
-}
+// if(countdown() == true) /*quando il countdown finisce */{
+//     valoriIns();
+// }
 
 
 
 function countdown(){
-    if(partenza == 0){
+    if(partenza === 0){
+        // return true;
         clearInterval(partenza); //fine setInterval
-        return true;        
+        valoriIns();        
     } else {
         document.getElementById('countdown').innerHTML = partenza;
         partenza--;
