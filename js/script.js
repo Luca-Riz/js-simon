@@ -18,26 +18,18 @@ while(randomNumber.length<5){
 console.log(randomNumber);
 
 // mostro il contenuto dell'array con un alert
-var conf = confirm('memorizza questi numeri '+ randomNumber);
-
-// quando schiaccio button parte un timer di 30 secondi
-if(conf == true){
-    var partenza = 3; //!da mettere 30
-    var countdownTimer = setInterval(countdown, 1000);    
-}
-
+var conf = alert('memorizza questi numeri '+ randomNumber);
+var partenza = 3; //!da mettere 30
+    var countdownTimer = setInterval(countdown, 1000);  
 
 // if(countdown() == true) /*quando il countdown finisce */{
 //     valoriIns();
 // }
 
-
-
 function countdown(){
     if(partenza === 0){
-        // return true;
-        clearInterval(partenza); //fine setInterval
-        valoriIns();        
+        clearInterval(countdownTimer); //fine setInterval
+        valoriIns();       
     } else {
         document.getElementById('countdown').innerHTML = partenza;
         partenza--;
@@ -50,7 +42,7 @@ function valoriIns(){
     // finito il tempo chiedo 5 prompt per riempire variabile "inseriti"
     
     while(inseriti.length<5){
-        var valore = parseInt(prompt('Inserisci un numero di quelli che hai vistprima'));
+        var valore = parseInt(prompt('Inserisci un numero di quelli che hai visto prima'));
         if(inseriti.includes(valore) != true){
             inseriti.push(valore);
         } else {
