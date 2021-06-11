@@ -7,6 +7,15 @@
 
 
 // faccio un array con 5 numeri random
+var randomNumber = [];
+
+while(randomNumber.length<5){
+    var valore = Math.floor(Math.random()*100 +1);
+    if(randomNumber.includes(valore) == false){
+        randomNumber.push(valore);
+    }
+}
+console.log(randomNumber);
 
 // mostro il contenuto dell'array con un alert
 
