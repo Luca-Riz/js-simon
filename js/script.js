@@ -44,6 +44,7 @@ function valoriIns(){
         } else {
             alert ('numero già inserito');
         }
+
     }//Output in base al punteggio realizzato
     if(corretti.length<5 && corretti.length>1){
         document.getElementById('punteggio').innerHTML = 'Hai indovinato '+ corretti.length + ' numeri';
@@ -60,9 +61,10 @@ function valoriIns(){
 
 //*=================funzioni========================
 function countdown(){
-    if(partenza === 0){
+    if(partenza == 0){
         clearInterval(countdownTimer); //fine setInterval
         valoriIns();       
+        document.getElementById('countdown').innerHTML = '';
     } else {
         document.getElementById('countdown').innerHTML = partenza;
         partenza--;
