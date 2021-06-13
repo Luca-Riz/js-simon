@@ -4,15 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- link css -->
+    <link rel="stylesheet" href="css/style.css">
     <title>Simon Says</title>
 </head>
-<body>
+<body class="bg-dark">
+    <div class="container-xl">
+      <div class="row">
+        <div class="col-10 offset-1">
+          <div class="box mt_50">
+            
+            <!-- contenuto -->
+            <div id="countdown" class="text-white text-center fs-1"></div>
+
+            <div id="punteggio" class="text-white text-center fs-1"></div>
+            <div id="indovinati" class="text-white text-center fs-1"></div>
+            <!-- fine contenuto -->
+  
+            <img src="img/bomb.jpg" class="rounded mx-auto d-none my-5" alt="" id="bomb">
+  
+  
+          </div>
+        </div>
+      </div>
+    </div>            
+  
 
 
-    <div id="countdown"></div>
 
-    <div id="punteggio"></div>
-    <div id="indovinati"></div>
 
 
     <script src="js/script.js"></script>

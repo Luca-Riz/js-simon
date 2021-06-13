@@ -38,11 +38,11 @@ function valoriIns(){
             
                 if(randomNumber.includes(inseriti[i]) == true){
                     corretti.push(inseriti[i]);
-                }
-            }
-
+                } 
+            } 
         } else {
             alert ('numero già inserito');
+            
         }
 
     }//Output in base al punteggio realizzato
@@ -50,7 +50,8 @@ function valoriIns(){
         document.getElementById('punteggio').innerHTML = 'Hai indovinato '+ corretti.length + ' numeri';
         document.getElementById('indovinati').innerHTML = 'I numeri corretti sono: '+ corretti;
     } else if(corretti.length == 5){
-        document.getElementById('indovinati').innerHTML = 'Complimenti, hai vinto, hai indovinato tutti e 5 i numeri!!! I numeri erano: '+ corretti;
+        document.getElementById('punteggio').innerHTML = 'Complimenti, hai vinto, hai indovinato tutti e 5 i numeri!!!'
+        document.getElementById('indovinati').innerHTML = 'I numeri erano: '+ corretti;
     } else if(corretti.length == 1){
         document.getElementById('indovinati').innerHTML = 'Hai indovinato un solo numero, il '+ corretti;
     } else {
@@ -63,7 +64,7 @@ function valoriIns(){
 function countdown(){
     if(partenza == 0){
         clearInterval(countdownTimer); //fine setInterval
-        valoriIns();       
+        valoriIns();      
         document.getElementById('countdown').innerHTML = '';
     } else {
         document.getElementById('countdown').innerHTML = partenza;
