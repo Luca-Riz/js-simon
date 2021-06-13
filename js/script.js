@@ -19,7 +19,7 @@ console.log(randomNumber);
 
 // mostro il contenuto dell'array con un alert
 var conf = alert('memorizza questi numeri '+ randomNumber);
-var partenza = 3; //!da mettere 30
+var partenza = 30; //!da mettere 30
     var countdownTimer = setInterval(countdown, 1000);  
 
 function valoriIns(){
@@ -28,21 +28,22 @@ function valoriIns(){
     var inseriti = [];
     while(inseriti.length<5){
         var valore = parseInt(prompt('Inserisci un numero di quelli che hai visto prima'));
-        if(inseriti.includes(valore) != true){
+        if(inseriti.includes(valore) != true && valore<=100 && valore>0 && isNaN(valore)==false)
+        /*controllo 0, NaN e numeri negativi*/{
             inseriti.push(valore);
 
             // confronto i due array e dico quanti sono stati indovinati e quali
-            var corretti = [];
- 
-            for(var i=0; i<5; i++){
-            
+            var corretti = []; 
+            for(var i=0; i<5; i++){           
                 if(randomNumber.includes(inseriti[i]) == true){
                     corretti.push(inseriti[i]);
                 } 
             } 
+
+        } else if (valore <= 0 ||  isNaN(valore) || valore>100)  /*controllo 0, NaN e numeri negativi*/  {
+            alert('Inserire solo numeri positivi da 1 a 100');
         } else {
-            alert ('numero già inserito');
-            
+            alert ('numero già inserito');            
         }
 
     }//Output in base al punteggio realizzato
